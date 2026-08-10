@@ -1,0 +1,1 @@
+This coral reef is in Mo'orea. It is a study site for scientists around the world, and home to the long term ecological research project. This model models the coral reef and various weather events through dice rolls.
