@@ -1,6 +1,5 @@
 # Function to Initialize reef with randomly placed corals
 
-
 initialize_reef <- function(reef_size = 5, num_coral = 8, fill = 1){
   reef <- matrix(0, nrow = reef_size, ncol = reef_size) # makes reef w 0s
   random_coral <- sample(1:reef_size ** 2, size = num_coral) # makes vector w randomly sampled locations
@@ -13,3 +12,17 @@ initialize_reef <- function(reef_size = 5, num_coral = 8, fill = 1){
 }
 
 initialize_reef(8, fill = 'uwu')
+
+# Function to grow coral
+
+growth <- function(reef, roll, row, col) {
+  growth_row_offset <- c(-1, -1, -1, 0, 1, 1, 1, 0)
+  growth_col_offset <- c(-1, 0, 1, 1, 1, 0, -1, -1)
+
+  growth_row <- row + growth_row_offset[roll]
+  growth_col <- col + growth_col_offset[roll]
+
+  reef[growth_row, growth_col] <- 1
+
+  return(reef)
+}
